@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./styles/nav.css"> -->
+    <link rel="stylesheet" href="./styles/cart.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <style>
+       
+    </style>
+</head>
+
+<body>
+ <div id="navbar"></div>
+   
+       
+
+        <div id="container1">
+            <div class="tableheading">
+                <table>
+                    <thead class="carttable">
+                        <tr>
+                            <th>Image</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="head">
+                <p>What would you like to do next?</p>
+            </div>
+
+            <div id="Coupon-div">
+                <form action="">
+                    <input id="Coupon" type="text" placeholder="Enter Your Coupon here">
+                    <input type="submit" value="Apply">
+                </form>
+
+            </div>
+
+            <div id="total-div">
+                <p id="subtotal"></p>
+                <p id="total"></p>
+            </div>
+
+            <div id="cart-bottom-btn">
+                <button> <a href="new.html" target="_blank" style="color: white; text-decoration: none;">Continue
+                        Shopping</a></button>
+                <button onclick="locationtocheckout()">
+                    <!-- <a href="checkout.html" target="_blank" -->
+                        <!-- style="color: white; text-decoration: none;"> -->
+                        Checkout
+                    <!-- </a> -->
+                </button>
+            </div>
+
+        </div>
+        
+
+    
+
+    <footer id="footer"></footer>
+</body>
+
+</html>
+<script type="module" > //src="./scripts/nav.js"
+import footer from './components/footer.js';
+document.getElementById("footer").innerHTML=footer()
+
+import navbar from './components/navbar.js';
+document.getElementById("navbar").innerHTML=navbar()
+
+</script>
+<script src="./scripts/cart.js"></script>
+<!-- <script type="module" src="./components/footer.js"></script> -->

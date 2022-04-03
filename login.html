@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <!-- <style></style> -->
+  </head>
+  <body>
+    <!-- <------------------------------navnarcontainer-->
+
+    <div id="navbar"></div>
+
+    <div id="FULLDIV">
+      <!-- <div id = inide -->
+      <div id="head">
+        <h2 id = "custo">CUSTOMER LOGIN</h2>
+      </div>
+
+      <hr />
+      <div id="signcontainer">
+        <label>EMAIL</label>
+        <br />
+        <input type="email" id="emailinp" placeholder="Email" class = "inputsize"  />
+        <br />
+        <br />
+
+        <label>PASSWORD</label>
+        <br />
+        <input type="text" id="password" placeholder="Password"class = "inputsize"  />
+        <br />
+        <br />
+
+        <!-- </div> -->
+        <!-- <div> -->
+
+        <!-- </div> -->
+        </div>
+        <br />
+        <button id="buttonlogin">LOG IN</button>
+        <br />
+        <p>RETURNING CUSTOMER?</p>
+        <a href="signup.html" id="signa">SIGN UP</a>
+      </div>
+    </div>
+
+    <!-- <----------footer----------->
+   <footer id="footer"></footer>
+  </body>
+</html>
+<script type ="module">
+import footer from './components/footer.js';
+document.getElementById("footer").innerHTML=footer()
+
+import navbar from './components/navbar.js';
+document.getElementById("navbar").innerHTML=navbar()
+document
+    .getElementById("buttonlogin")
+    .addEventListener("click", loginsubmit);
+//   <----------------COllect all data from localstorage-------->
+//     var register = JSON.parse(localStorage.getItem("beautyobj")) || []
+
+// console.log(register);
+//   <-------------------MAKE  A BUTTON FUNCTION CATH INPUT------>
+  async function loginsubmit(){
+    // event.preventDefault();
+    console.log("rohit");
+    try{
+     var userlogin = { 
+       email : document.getElementById("emailinp").value,
+    // console.log(email,"email");
+      password :document.getElementById("password").value,
+    // console.log(password ,"Pass")}
+    },
+     userlogin = JSON.stringify(userlogin);
+     console.log(userlogin,"userlogiin")
+  }
+    catch(error){
+    console.log("error:",error);
+}
+
+     
+
+        let response = await fetch("http://localhost:5000/login", {
+            method: "POST",
+            body: userlogin,
+            headers: {
+          
+        "Content-Type": "application/json",
+          },
+        });
+         console.log("response:",response.status);
+       
+        
+             if(response.status==400){
+            alert("Invalid Email or Password")
+        }
+        else{
+        let data=await response.json();
+        console.log("data:",data);
+        setTimeout(function(){
+      window.location.href = "index.html";
+      }, 2000);
+
+
+}
+   
+    }
+
+    
+  
+
+    
+
+
+</script>

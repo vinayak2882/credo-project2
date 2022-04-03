@@ -1,0 +1,131 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+#navcontainer {
+    /* position:fixed; */
+    top: 0%;
+    width: 100%;
+    overflow:hidden;
+    position: fixed;
+    background-color: white;
+    z-index: 100;
+
+}
+
+#pinkline {
+
+    width: 100%;
+    height: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    padding-top: 10px;
+    text-align: center;
+    background-color: rgb(180, 63, 102);
+    color: aliceblue;
+}
+
+#blueline {
+    width: 100%;
+    height: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    padding-top: 10px;
+    text-align: center;
+    color: antiquewhite;
+    background-color: #418993;
+
+}
+
+#lefttt {
+    position: relative;
+    padding: 2px 8px;
+    display: inline-block;
+    width: 400px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    padding-top: 40px;
+}
+
+#whitline {
+    display: flex;
+    width: 100%;
+    height: 50px;
+
+}
+
+#medium {
+
+    margin-left: 200px;
+    padding-top: 15px;
+
+}
+
+#righttt {
+    margin-top: 20px;
+    margin-left: 390px;
+    justify-content: space-between;
+    padding-left: 5px;
+}
+
+img {
+    padding-inline-start: 3px;
+}
+
+#searchbar {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding-top: 30px;
+    width: 200px;
+    margin-left: 10px;
+}
+
+hr {
+    margin-top: 40px;
+}
+
+#aclogo {
+    margin-top: 20px;
+}
+
+#listitem {
+
+    /* list-style: none; */
+    padding: 0;
+    margin: 0;
+    /* display: block; */
+    height: 20px;
+    /* border: 1px solid; */
+}
+
+#gfd {
+    display: inline-block;
+    margin: 0;
+    /* position: unset; */
+    text-align: center;
+    padding: 0px 20px 3px;
+    margin-left: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#asp {
+    text-decoration: none;
+    color: black;
+}
+
+#bottom {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#secondwhite {
+    color: #418993;
+    text-align: center;
+    margin-top: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+
+}

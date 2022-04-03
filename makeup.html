@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+   
+<style>
+#main{
+    margin: 13px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border: 1px solid black;
+}
+#img_div{
+    width: 98%;
+    height: 95%;
+    /* border: 2px solid; */
+    margin-top: 0px;
+    margin-bottom: -30px;
+}
+h1,p {
+    margin-left: 0px;
+}
+/* #sort{
+    margin-left: 50px;
+} */
+#card_div{
+    border: 2px solid black;
+    margin: 10px;
+    display: grid;
+    align-content: center;text-align: center;
+  
+   
+}
+#div_container{
+    margin: 10px;
+    border: 1px solid green;
+    margin-top: 250px;
+}
+
+#cartbtn{
+    width: 200px;
+    height: 30px;
+  margin: auto;
+  
+}
+#div2{
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+ <div id="navbar"> </div>
+
+
+
+   <div id="div_container"> 
+<a href="afterlogin.html"> <h1> Makeup </h1></a>
+    <p>Home / CLean Makeup</p>
+    
+  
+
+<select name="sort" onchange="sortProducts()" id="sortButton" >
+    <option  value="#">SORT</option>
+    <option value="asc">Low to High</option>
+    <option value="desc">High to Low</option>
+ </select>
+  <select name="filter" id="filterButton" onchange="filterProducts()">
+        <option value="#">BRAND</option>
+        <option value="dior">Dior</option>
+        <option value="clinique">Clinique</option>
+        <option value="smashbox">Smashbox</option>
+        <option value="cargo cosmetics">Cargo Cosmetics</option>
+        <option value="glossier">Glossier</option>
+        <option value="benefit">Benefit</option>
+        <option value="dr. hauschka">Dr.Hauschka</option>
+        <option value="pacifica">Pacifica</option>
+        <option value="sante">Sante</option>
+       
+      </select>
+</div>
+
+<div id="main"> </div>
+
+  <br>
+  <br>
+   <div id="footer"> </div>
+    
+</body>
+</html>
+
+<script >
+  var url = `https://makeup-api.herokuapp.com/api/v1/products.json?items?limit=20&price_greater_than=25&price_less_than=35&`;
+
+
+  
+//  let url = `https://fakestoreapi.com/products`;
+
+      // my testing url unit-4 project-->
+      // let url = `https://makeup-api.herokuapp.com/api/v1/products.json?price_greater_than=25&price_less_than=35`;
+
+      async function getProducts() {
+        try {
+          let productsList = await fetchProducts(url); // expected response [{id:1, title:1, ...},{},{}...]
+          renderProducts(productsList);
+          console.log(productsList)
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      getProducts();
+
+
+    
+
+      function fetchProducts(url) {
+        return fetch(url) // fetch the data from url provided;
+          .then(function (res) {
+            return res.json(); // collect all the data that comes in form of data packet and make it a single entity
+          })
+          .then(function (res) {
+            return res; // returns the response;
+          })
+          .catch(function (err) {
+            console.log(err);
+          });
+      }
+
+      // this function gets invoked when users changes sort criteria
+      async function sortProducts() {
+        try {
+         
+          let productsList = await fetchProducts(url);
+          // console.log(productsList)
+          let sortCriteria = document.getElementById("sortButton").value; // "asc", "desc"
+          let filterCriteria = document.getElementById("filterButton").value; //values expected : "0-50" , "51-150", ">150"
+console.log(sortCriteria)
+          if (sortCriteria) {
+            console.log("yes")
+
+            let updatedProductsList = productsList
+             
+              .sort(function sortFunction(prodA, prodB) {
+                console.log("yes")
+                if (sortCriteria === "asc") {
+                  console.log("LTH")
+                  return prodA.price - prodB.price;
+                } else if (sortCriteria === "desc") {
+                   console.log("HTL")
+                  return prodB.price - prodA.price;
+                }
+              });
+               updatedProductsList.filter(filterFunction)
+            renderProducts(updatedProductsList);
+          } else {
+            let updatedProductsList = productsList.filter(filterFunction);
+            renderProducts(updatedProductsList);
+          }
+
+         
+          function filterFunction(prod) {
+           
+            if (prod.brand === `${filterCriteria}`) {
+              return prod.brand;
+            }  
+            //  else {
+            //   return true;
+            // }
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      async function filterProducts() {
+        try {
+      
+          let productsList = await fetchProducts(url); // [{},{}]
+          let filterCriteria = document.getElementById("filterButton").value; //values expected : "0-50" , "51-150", ">150"
+          let sortCriteria = document.getElementById("sortButton").value; //"asc", "desc"
+          if (sortCriteria) {
+            let updatedProductsList = productsList
+              .filter(filterFunction)
+              .sort(function sortFunction(prodA, prodB) {
+                if (sortCriteria === "asc") {
+                // console.log("LTH")
+                  return prodA.price - prodB.price;
+                } else if (sortCriteria === "desc") {
+                  //  console.log("HTL")
+                  return prodB.price - prodA.price;
+                }
+              });
+            renderProducts(updatedProductsList);
+          } else {
+            let updatedProductsList = productsList.filter(filterFunction);
+            renderProducts(updatedProductsList);
+          }
+          function filterFunction(prod) {
+           
+            if (prod.brand === `${filterCriteria}`) {
+                
+                console.log(prod.brand,":  vinu")
+               
+              return prod.brand;
+              } //else {
+            //   return true;
+            // }
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      function renderProducts(products) {
+        let arr=[];
+        let container = document.getElementById("main");
+        container.innerHTML = ""; // empty out container to repaint DOM with the current products data that has been passed as argument;
+
+        products.forEach(function (prod) {
+          // {id:1, title: "", }
+          // console.log(prod.category)
+          let prodCard = document.createElement("div");
+          prodCard.setAttribute("id","card_div")
+         
+          let div2=document.createElement("div");
+          div2.setAttribute("id","div2")
+
+          // create product image;
+          let image = document.createElement("img");
+          image.src = prod.image_link; // image url src;
+          image.setAttribute("id","img_div")
+
+          // create product title
+          let title = document.createElement("p");
+          title.textContent = prod.name;
+          title.setAttribute("id","desc")
+
+          // create prod price;
+          let price = document.createElement("p");
+          price.textContent = "Price : INR " + prod.price;
+
+          let brand =document.createElement("p")
+          brand.innerText=prod.brand
+        //   console.log(prod.brand)
+
+
+          // create Add to Cart button;
+          let addToCartButton = document.createElement("button");
+          addToCartButton.setAttribute("id","cartbtn")
+          addToCartButton.textContent = "Add to Cart";
+          addToCartButton.onclick = function Vinayak() {
+         
+      //  let arr = JSON.parse(localStorage.getItem("Cart_Items")) || [];
+      arr.push(prod);
+      console.log(arr)
+      localStorage.setItem("Cart_Items", JSON.stringify(arr));
+        alert("Succesfully added")
+    };
+div2.append(title, price,brand, addToCartButton)
+          prodCard.append(image,div2 );
+          container.append(prodCard);
+        });
+
+        }
+      
+
+
+
+
+</script>
+
+
+<script type="module" > //src="./scripts/nav.js"
+import footer from './components/footer.js';
+document.getElementById("footer").innerHTML=footer()
+
+import navbar from './components/navbar.js';
+document.getElementById("navbar").innerHTML=navbar()
+
+</script>

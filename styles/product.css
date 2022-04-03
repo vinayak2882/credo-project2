@@ -1,0 +1,48 @@
+#product-container {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    height: 400px;
+    margin-top: 200px;
+    margin-bottom: 20px;
+}
+
+#product-image {
+    flex: 1;
+}
+
+#product-image>img {
+    padding: 10px;
+    width: 70%;
+
+}
+
+#brandname {
+    margin-top: 100px;
+    font-size: 30px;
+    color: rgb(214, 160, 11);
+}
+
+#productdetails {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+#prodictprice {
+    margin-top: 30px;
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+
+#product-details {
+    flex: 1;
+    padding: 30px;
+}
+#new-function{
+    margin-top: 100px;
+    display: flex;
+}
+button{
+    margin: 0px 15px;
+}

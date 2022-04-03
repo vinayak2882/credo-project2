@@ -1,0 +1,241 @@
+#pinkline {
+
+    width: 100%;
+    height: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding-top: 15px;
+    text-align: center;
+    background-color: rgb(180, 63, 102);
+    color: aliceblue;
+  }
+
+  #blueline {
+    width: 100%;
+    height: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    padding-top: 15px;
+    text-align: center;
+    color: antiquewhite;
+    background-color: #418993;
+
+  }
+
+  #left {
+    position: relative;
+    padding: 2px 8px;
+    display: inline-block;
+    width: 400px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    padding-top: 40px;
+  }
+
+  #mitem:hover {
+    background-color: rgb(180, 63, 102);
+  }
+
+  #whitline {
+    display: flex;
+    width: 100%;
+    height: 50px;
+  }
+
+  #medium {
+
+    margin-left: 200px;
+    padding-top: 15px;
+
+  }
+
+  #right {
+    margin-top: 20px;
+    margin-left: 390px;
+    justify-content: space-between;
+    padding-left: 5px;
+  }
+
+  img {
+    padding-inline-start: 3px;
+  }
+
+  #searchbar {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding-top: 30px;
+    width: 200px;
+    margin-left: 5px;
+  }
+
+  hr {
+    margin-top: 40px;
+  }
+
+  #aclogo {
+    margin-top: 20px;
+  }
+
+  #unorder {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+
+  #mitem {
+    display: inline-block;
+    margin: 0;
+    position: unset;
+    padding: 10px 20px;
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+
+  #ref {
+    text-decoration: none;
+    color: black;
+  }
+
+  #bottom {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  #secondwhite {
+    color: #418993;
+    text-align: center;
+    margin-top: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    text-decoration: solid;
+    border: none;
+    appearance: none;
+
+  }
+
+  h2 {
+    /* margin-right: 30px; */
+    font-size: 16px;
+  }
+
+  #commondiv {
+    margin: 10px;
+    /* border:1px solid #ccc */
+  }
+
+  #form {
+    margin: 10px;
+    /* border: 1px solid blue; */
+  }
+
+  #footul>li> a {
+    color: #fff;
+    font-size: 14px;
+    /* border: 1px solid red; */
+  }
+
+  #shopify-section-footer {
+    margin: 10px;
+    /* border: 1px solid blue; */
+  }
+
+  #bigcontainer {
+    /* border: 4px solid blue; */
+    margin: auto;
+    /* height: 500px; */
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 150%;
+    width: 100%;
+    margin-top: 300px;
+  }
+
+  .widgets,
+  .resource-container,
+  .Discounts,
+  .CONTACTUS {
+    /* border: 2px solid purple; */
+    margin: 10px;
+    /* width: 2%; */
+    text-align: center;
+    background-color: black;
+    /* width: 100 */
+  }
+
+  .subscribe {
+    /* display: flex; */
+    /* border: 2px solid green; */
+    margin: 10px;
+    background-color: black;
+  }
+
+  #seconddiv {
+    /* border: 5px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    background-color: black;
+    /* width: 100%; */
+    
+  }
+
+  #thirddiv {
+    /* display: flex; */
+    /* border: 2px solid greenyellow; */
+    margin: 10px 0px 0px 20px;
+    text-align: start;
+    flex-wrap: wrap;
+    background-color: black;
+    /* margin-top: 10px */
+  }
+
+  p{
+    margin-left: 40px;
+    /* border: 1px solid red; */
+  }
+
+  /* li{
+      border:2px solid  white;
+    } */
+  #footer__payments-list,
+  #footlist {
+    border: 2px solid dotted;
+    display: flex;
+    /* margin: 10px; */
+    align-items: flex-start;
+  }
+
+  #bigcontainer {
+    display: flex;
+    /* height: 350px; */
+  }
+
+  #socials {
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 2px solid maroon; */
+    margin: 100px 0px 0px 0px;
+    width: 500px;
+    flex-direction: row;
+    /* height: 400px; */
+    /* text-align:center; */
+    justify-content: space-around;
+  }
+
+  /* #inst {
+      margin: 10px;
+      border: 2px solid maroon;
+      height: 200px;
+    } */
+  /* h2{
+      margin-left: 50px;
+    } */
+  #footlist {
+    text-align: left;
+  }

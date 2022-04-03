@@ -1,0 +1,129 @@
+body {
+  line-height: 1.5;
+  /* font-family: "Poppins", sans-serif; */
+}
+
+h2 {
+  /* margin-right: 30px; */
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#commondiv {
+  margin: 10px;
+  /* border:1px solid #ccc */
+}
+
+#form {
+  margin: 10px;
+  /* border: 1px solid blue; */
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#shopify-section-footer {
+  margin: 10px;
+  /* border: 1px solid blue; */
+}
+
+#foocontainer {
+  /* border: 4px solid blue; */
+  margin: auto;
+  /* height: 500px; */
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 150%;
+  width: 100%;
+  margin-top: 60px;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.widgets,
+.resource-container,
+.Discounts,
+.CONTACTUS {
+  /* border: 2px solid purple; */
+  margin: 10px;
+  /* width: 2%; */
+  text-align: center;
+  background-color: black;
+  /* width: 100 */
+}
+
+.subscribe {
+  /* display: flex; */
+  /* border: 2px solid green; */
+  margin: 10px;
+  background-color: black;
+}
+
+#seconddiv {
+  /* border: 5px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  background-color: black;
+  /* width: 100%; */
+}
+
+#thirddiv {
+
+  margin: 10px 0px 0px 20px;
+  text-align: start;
+  flex-wrap: wrap;
+  background-color: black;
+
+}
+
+p {
+  margin-left: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer__payments-list,
+li {
+  border: 2px solid dotted;
+  display: flex;
+  align-items: flex-start;
+}
+
+#bigcontainer {
+  display: flex;
+}
+
+#socials {
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* border: 2px solid maroon; */
+  margin-top: 80px;
+  margin-left: 00px;
+  width: 500px;
+  /* flex-direction: row; */
+  /* height: 400px; */
+  /* text-align:center; */
+  justify-content: space-around;
+}
+
+#image1 {
+
+  margin-left: -200px;
+}
+
+li {
+  text-align: left;
+}
+
+#footer__payments-list {
+  display: flex;
+  gap: 20px;
+}

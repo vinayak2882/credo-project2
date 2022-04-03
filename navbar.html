@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/navstyle.css">
+</head>
+<body>
+    <div id="container">
+        <div id="navbar"></div>
+        <div id="main"></div>
+    </div>
+</body>
+</html>
+<script type="module">
+import navBar from "./navbar (1).js"
+ let res= navBar()
+ 
+ console.log(res)
+ let nav=document.getElementById('navbar')
+//  nav.append(res)
+nav.innerHTML=res
+</script>

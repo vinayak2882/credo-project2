@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <!-- <link rel="stylesheet" href="./navstyle.css"> -->
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="bigfoot"></div>
+  </body>
+</html>
+<script type="module">
+  // import navBar from "/components/navbar.js";
+  // console.log(navBar);
+  // let nav=document.getElementById("navbar")
+  // nav.innerHTML=navBar();
+  console.log("rohit");
+   import navbar from './navbar.js';
+document.getElementById("navbar").innerHTML=navbar()
+  // <--------------footer-------------->
+  import footer from "./footer.js";
+  console.log(footer);
+  let bigfoot = document.getElementById("bigfoot");
+  bigfoot.innerHTML = footer();
+</script>

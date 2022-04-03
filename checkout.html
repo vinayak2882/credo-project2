@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/navbar.css"/>
+    <link rel="stylesheet" href="./styles/footer.css">
+    <style>
+      #container {
+        display: flex;
+        margin-top: 250px;
+      }
+      #right {
+        border: 1px solid rgb(240, 238, 238);
+        border-bottom: none;
+        flex: 4;
+
+        background-color: rgba(218, 214, 214, 0.897);
+      }
+      #left {
+        border: 1px solid grey;
+        border-bottom: none;
+        flex: 6;
+      }
+
+      #imus {
+        margin-left: 200px;
+        margin-top: 50px;
+      }
+
+      #text {
+        font-size: 12px;
+        margin-left: 200px;
+      }
+      #checlout {
+        margin-left: 300px;
+        border: 1px solid grey;
+        margin-right: 200px;
+        margin-left: 200px;
+        text-align: center;
+        box-sizing: content-box;
+      }
+      #paypal {
+        height: 20px;
+        max-height: 25px;
+        padding-bottom: 20px;
+        min-height: 17px;
+      }
+      #btn {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMTAwIDMyIiB4bWxucz0iaHR0cDomI3gyRjsmI3gyRjt3d3cudzMub3JnJiN4MkY7MjAwMCYjeDJGO3N2ZyIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pbllNaW4gbWVldCI+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSAxMiA0LjkxNyBMIDQuMiA0LjkxNyBDIDMuNyA0LjkxNyAzLjIgNS4zMTcgMy4xIDUuODE3IEwgMCAyNS44MTcgQyAtMC4xIDI2LjIxNyAwLjIgMjYuNTE3IDAuNiAyNi41MTcgTCA0LjMgMjYuNTE3IEMgNC44IDI2LjUxNyA1LjMgMjYuMTE3IDUuNCAyNS42MTcgTCA2LjIgMjAuMjE3IEMgNi4zIDE5LjcxNyA2LjcgMTkuMzE3IDcuMyAxOS4zMTcgTCA5LjggMTkuMzE3IEMgMTQuOSAxOS4zMTcgMTcuOSAxNi44MTcgMTguNyAxMS45MTcgQyAxOSA5LjgxNyAxOC43IDguMTE3IDE3LjcgNi45MTcgQyAxNi42IDUuNjE3IDE0LjYgNC45MTcgMTIgNC45MTcgWiBNIDEyLjkgMTIuMjE3IEMgMTIuNSAxNS4wMTcgMTAuMyAxNS4wMTcgOC4zIDE1LjAxNyBMIDcuMSAxNS4wMTcgTCA3LjkgOS44MTcgQyA3LjkgOS41MTcgOC4yIDkuMzE3IDguNSA5LjMxNyBMIDkgOS4zMTcgQyAxMC40IDkuMzE3IDExLjcgOS4zMTcgMTIuNCAxMC4xMTcgQyAxMi45IDEwLjUxNyAxMy4xIDExLjIxNyAxMi45IDEyLjIxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSAzNS4yIDEyLjExNyBMIDMxLjUgMTIuMTE3IEMgMzEuMiAxMi4xMTcgMzAuOSAxMi4zMTcgMzAuOSAxMi42MTcgTCAzMC43IDEzLjYxNyBMIDMwLjQgMTMuMjE3IEMgMjkuNiAxMi4wMTcgMjcuOCAxMS42MTcgMjYgMTEuNjE3IEMgMjEuOSAxMS42MTcgMTguNCAxNC43MTcgMTcuNyAxOS4xMTcgQyAxNy4zIDIxLjMxNyAxNy44IDIzLjQxNyAxOS4xIDI0LjgxNyBDIDIwLjIgMjYuMTE3IDIxLjkgMjYuNzE3IDIzLjggMjYuNzE3IEMgMjcuMSAyNi43MTcgMjkgMjQuNjE3IDI5IDI0LjYxNyBMIDI4LjggMjUuNjE3IEMgMjguNyAyNi4wMTcgMjkgMjYuNDE3IDI5LjQgMjYuNDE3IEwgMzIuOCAyNi40MTcgQyAzMy4zIDI2LjQxNyAzMy44IDI2LjAxNyAzMy45IDI1LjUxNyBMIDM1LjkgMTIuNzE3IEMgMzYgMTIuNTE3IDM1LjYgMTIuMTE3IDM1LjIgMTIuMTE3IFogTSAzMC4xIDE5LjMxNyBDIDI5LjcgMjEuNDE3IDI4LjEgMjIuOTE3IDI1LjkgMjIuOTE3IEMgMjQuOCAyMi45MTcgMjQgMjIuNjE3IDIzLjQgMjEuOTE3IEMgMjIuOCAyMS4yMTcgMjIuNiAyMC4zMTcgMjIuOCAxOS4zMTcgQyAyMy4xIDE3LjIxNyAyNC45IDE1LjcxNyAyNyAxNS43MTcgQyAyOC4xIDE1LjcxNyAyOC45IDE2LjExNyAyOS41IDE2LjcxNyBDIDMwIDE3LjQxNyAzMC4yIDE4LjMxNyAzMC4xIDE5LjMxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSA1NS4xIDEyLjExNyBMIDUxLjQgMTIuMTE3IEMgNTEgMTIuMTE3IDUwLjcgMTIuMzE3IDUwLjUgMTIuNjE3IEwgNDUuMyAyMC4yMTcgTCA0My4xIDEyLjkxNyBDIDQzIDEyLjQxNyA0Mi41IDEyLjExNyA0Mi4xIDEyLjExNyBMIDM4LjQgMTIuMTE3IEMgMzggMTIuMTE3IDM3LjYgMTIuNTE3IDM3LjggMTMuMDE3IEwgNDEuOSAyNS4xMTcgTCAzOCAzMC41MTcgQyAzNy43IDMwLjkxNyAzOCAzMS41MTcgMzguNSAzMS41MTcgTCA0Mi4yIDMxLjUxNyBDIDQyLjYgMzEuNTE3IDQyLjkgMzEuMzE3IDQzLjEgMzEuMDE3IEwgNTUuNiAxMy4wMTcgQyA1NS45IDEyLjcxNyA1NS42IDEyLjExNyA1NS4xIDEyLjExNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA2Ny41IDQuOTE3IEwgNTkuNyA0LjkxNyBDIDU5LjIgNC45MTcgNTguNyA1LjMxNyA1OC42IDUuODE3IEwgNTUuNSAyNS43MTcgQyA1NS40IDI2LjExNyA1NS43IDI2LjQxNyA1Ni4xIDI2LjQxNyBMIDYwLjEgMjYuNDE3IEMgNjAuNSAyNi40MTcgNjAuOCAyNi4xMTcgNjAuOCAyNS44MTcgTCA2MS43IDIwLjExNyBDIDYxLjggMTkuNjE3IDYyLjIgMTkuMjE3IDYyLjggMTkuMjE3IEwgNjUuMyAxOS4yMTcgQyA3MC40IDE5LjIxNyA3My40IDE2LjcxNyA3NC4yIDExLjgxNyBDIDc0LjUgOS43MTcgNzQuMiA4LjAxNyA3My4yIDYuODE3IEMgNzIgNS42MTcgNzAuMSA0LjkxNyA2Ny41IDQuOTE3IFogTSA2OC40IDEyLjIxNyBDIDY4IDE1LjAxNyA2NS44IDE1LjAxNyA2My44IDE1LjAxNyBMIDYyLjYgMTUuMDE3IEwgNjMuNCA5LjgxNyBDIDYzLjQgOS41MTcgNjMuNyA5LjMxNyA2NCA5LjMxNyBMIDY0LjUgOS4zMTcgQyA2NS45IDkuMzE3IDY3LjIgOS4zMTcgNjcuOSAxMC4xMTcgQyA2OC40IDEwLjUxNyA2OC41IDExLjIxNyA2OC40IDEyLjIxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA5MC43IDEyLjExNyBMIDg3IDEyLjExNyBDIDg2LjcgMTIuMTE3IDg2LjQgMTIuMzE3IDg2LjQgMTIuNjE3IEwgODYuMiAxMy42MTcgTCA4NS45IDEzLjIxNyBDIDg1LjEgMTIuMDE3IDgzLjMgMTEuNjE3IDgxLjUgMTEuNjE3IEMgNzcuNCAxMS42MTcgNzMuOSAxNC43MTcgNzMuMiAxOS4xMTcgQyA3Mi44IDIxLjMxNyA3My4zIDIzLjQxNyA3NC42IDI0LjgxNyBDIDc1LjcgMjYuMTE3IDc3LjQgMjYuNzE3IDc5LjMgMjYuNzE3IEMgODIuNiAyNi43MTcgODQuNSAyNC42MTcgODQuNSAyNC42MTcgTCA4NC4zIDI1LjYxNyBDIDg0LjIgMjYuMDE3IDg0LjUgMjYuNDE3IDg0LjkgMjYuNDE3IEwgODguMyAyNi40MTcgQyA4OC44IDI2LjQxNyA4OS4zIDI2LjAxNyA4OS40IDI1LjUxNyBMIDkxLjQgMTIuNzE3IEMgOTEuNCAxMi41MTcgOTEuMSAxMi4xMTcgOTAuNyAxMi4xMTcgWiBNIDg1LjUgMTkuMzE3IEMgODUuMSAyMS40MTcgODMuNSAyMi45MTcgODEuMyAyMi45MTcgQyA4MC4yIDIyLjkxNyA3OS40IDIyLjYxNyA3OC44IDIxLjkxNyBDIDc4LjIgMjEuMjE3IDc4IDIwLjMxNyA3OC4yIDE5LjMxNyBDIDc4LjUgMTcuMjE3IDgwLjMgMTUuNzE3IDgyLjQgMTUuNzE3IEMgODMuNSAxNS43MTcgODQuMyAxNi4xMTcgODQuOSAxNi43MTcgQyA4NS41IDE3LjQxNyA4NS43IDE4LjMxNyA4NS41IDE5LjMxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA5NS4xIDUuNDE3IEwgOTEuOSAyNS43MTcgQyA5MS44IDI2LjExNyA5Mi4xIDI2LjQxNyA5Mi41IDI2LjQxNyBMIDk1LjcgMjYuNDE3IEMgOTYuMiAyNi40MTcgOTYuNyAyNi4wMTcgOTYuOCAyNS41MTcgTCAxMDAgNS42MTcgQyAxMDAuMSA1LjIxNyA5OS44IDQuOTE3IDk5LjQgNC45MTcgTCA5NS44IDQuOTE3IEMgOTUuNCA0LjkxNyA5NS4yIDUuMTE3IDk1LjEgNS40MTcgWiI+PC9wYXRoPjwvc3ZnPg");
+        background-repeat: no-repeat;
+        background-color: rgb(255, 255, 32);
+        width: 170px;
+        height: 40px;
+        padding-bottom: 15px;
+        border: none;
+        background-position: center;
+      }
+      .policy-list__item {
+        float: left;
+        font-size: 0.8571428571em;
+        margin-right: 1.5em;
+        margin-bottom: 0.5em;
+      }
+      .policy-list:after,
+      .policy-list:before {
+        content: "";
+        display: table;
+      }
+      #contact {
+        margin-left: 100px;
+      }
+
+      div {
+        display: block;
+      }
+      .policy-list {
+        zoom: 1;
+        text-align: center;
+        margin-left: 200px;
+      }
+      ul,
+      ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      #nml {
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+      }
+      #lmn {
+        display: list-item;
+        list-style: none;
+        text-align: -webkit-match-parent;
+      }
+      #address {
+        margin-left: 200px;
+      }
+
+      #fname,
+      #lname {
+        margin-top: 40px;
+        width: 200px;
+        height: 50px;
+      }
+      #inpt {
+        height: 50px;
+        margin-top: 40px;
+        width: 410px;
+      }
+      #container {
+        display: flex;
+      }
+
+      #int {
+        margin-top: 50px;
+      }
+
+      #bn {
+        width: 200px;
+        height: 70px;
+        background-color: rgb(62, 62, 102);
+        color: aliceblue;
+        margin-left: 400px;
+      }
+
+      #tt {
+        padding-right: 15px;
+      }
+      #in {
+        margin-top: 100px;
+        margin-left: 80px;
+        width: 200px;
+        height: 40px;
+      }
+      #appl {
+        width: 100px;
+        height: 40px;
+        background-color: white;
+      }
+      #innerright {
+        margin-top: 100px;
+        margin-left: 150px;
+      }
+      #appl:hover {
+        background-color: palevioletred;
+      }
+      button {
+        margin-top: 20px;
+        width: 200px;
+        height: 50px;
+        background-color: white;
+      }
+
+      button:hover {
+        background-color: rgb(211, 58, 84);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="container">
+      <div id="left">
+        <a href="home.html"
+          ><img id="imus"
+            src="https://cdn.shopify.com/s/files/1/0637/6147/files/logo_556396e7-3386-4a9c-8dfc-b9250175595e.png?height=628&pad_color=ffffff&v=1523377568&width=1200"
+            width="150px"
+            height="100px"
+            alt=""
+        /></a>
+        <br />
+        <p id="text">
+          Cart&nbsp;&nbsp; >&nbsp;&nbsp; Information&nbsp;&nbsp; >&nbsp;&nbsp;
+          Shipping&nbsp;&nbsp; >&nbsp;&nbsp; Payment
+        </p>
+        <br />
+        <p id="checlout">
+          Express Checkout <br />
+          <button id="btn"></button>
+        </p>
+        <hr />
+        <br />
+
+        <p id="contact">Contact Information</p>
+        <div style="display: flex">
+          <img id="imus"
+            src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png"
+            width="50px"
+            height="50px"
+            alt=""
+          />
+          <p id="profile" style="margin-top: 60px; margin-left: 50px"></p>
+        </div>
+        <br />
+        <p style="margin-left: 200px">
+          <input type="checkbox" name="" id="" />Email me with news and offers
+        </p>
+        <br />
+        <div id="address">
+          <h3>Shipping Address</h3>
+
+          <form action="">
+            <input
+              type="text"
+              id="inpt"
+              placeholder="Use a new address"
+            /><br />
+            <input type="text" id="fname" placeholder="First Name" />
+            <input type="text" id="lname" placeholder="Last Name " />
+            <br />
+            <input type="text" id="inpt" name="" placeholder="Address" />
+            <br />
+            <input
+              type="text"
+              id="inpt"
+              placeholder="Apartmet,Suite,etc. (optional)"
+              name=""
+              id=""
+            />
+            <br /><input
+              type="text"
+              id="inpt"
+              placeholder="city"
+              name=""
+              id=""
+            />
+            <br />
+            <input id="int" type="checkbox" name="" id="" />
+            <p id="tt">
+              Send me news and special offers via text message* By checking the
+              box and entering your phone number above, you consent to receive
+              marketing text <br />
+              messages from Credo Beauty at the number provided,<br />
+              including messages sent by autodialer. Consent is not a condition
+              of any purchase. Message and data rates may apply. <br />
+              Message frequency varies. Reply HELP for help or STOP to cancel.
+              View our Privacy Policy and Terms of Service.
+            </p>
+            <button id="bn">Continue to shipping</button>
+          </form>
+        </div>
+        <hr width="600px" />
+        <ul id="nml" class="policy-list" role="list">
+          <li id="lmn" class="policy-list__item">
+            <a
+              aria-haspopup="dialog"
+              data-modal="policy-refund-policy"
+              data-title-text="Refund policy"
+              data-close-text="Close"
+              data-iframe="true"
+              href="https://credobeauty.com/6376147/policies/refund-policy.html?locale=en-US"
+              >Refund policy</a
+            >
+          </li>
+          <li id="lmn" class="policy-list__item">
+            <a
+              aria-haspopup="dialog"
+              data-modal="policy-shipping-policy"
+              data-title-text="Shipping policy"
+              data-close-text="Close"
+              data-iframe="true"
+              href="https://credobeauty.com/6376147/policies/shipping-policy.html?locale=en-US"
+              >Shipping policy</a
+            >
+          </li>
+          <li id="lmn" class="policy-list__item">
+            <a
+              aria-haspopup="dialog"
+              data-modal="policy-privacy-policy"
+              data-title-text="Privacy policy"
+              data-close-text="Close"
+              data-iframe="true"
+              href="https://credobeauty.com/6376147/policies/privacy-policy.html?locale=en-US"
+              >Privacy policy</a
+            >
+          </li>
+          <li id="lmn" class="policy-list__item">
+            <a
+              aria-haspopup="dialog"
+              data-modal="policy-terms-of-service"
+              data-title-text="Terms of service"
+              data-close-text="Close"
+              data-iframe="true"
+              href="https://credobeauty.com/6376147/policies/terms-of-service.html?locale=en-US"
+              >Terms of service</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div id="right">
+        <h2 style="margin-top: 50px; margin-left: 100px; color: teal">
+          Enter Your Card Details
+        </h2>
+        <div id="innerright">
+          <label for="cardNumber" style="color: palevioletred"
+            ><h3>CARD NUMBER</h3></label
+          >
+          <input
+            type="text"
+            id="cardNumber"
+            name="cardNumber"
+            placeholder="Card Number"
+            style="height: 40px"
+          />
+          <br />
+          <br />
+          <label for="dateOfExpiry" style="color: palevioletred"
+            ><h3>DATE OF EXPIRY</h3></label
+          >
+          <input
+            type="date"
+            id="dateOfExpiry"
+            name="dateOfExpiry"
+            placeholder="Date Of Expiry"
+            style="height: 40px"
+          />
+          <br />
+          <br />
+          <label for="cvv" style="color: palevioletred"><h3>CVV</h3> </label>
+          <input type="text" id="cvv" placeholder="CVV" style="height: 40px" />
+          <br />
+          <br />
+          <button onclick="createOrder()">Make Payment</button>
+          <br />
+          <br />
+        </div>
+
+        <div></div>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+  </body>
+</html>
+<script>
+
+var totalPricee = storage.getItem(pricekey);
+  var scdata = JSON.parse(localStorage.getItem("BEAUTYKEY"));
+  // var scdata1=JSON.parse(localStorage.getItem("searchUserdata"));
+  console.log(scdata);
+  scdata.map(function (elem) {
+    document.getElementById("profile").textContent = ` ${elem.FNAME}`;
+  });
+
+  function createOrder() {
+    let cardNumber = document.getElementById("cardNumber").value;
+    let dateOfExpiry = document.getElementById("dateOfExpiry").value;
+    let cvv = document.getElementById("cvv").value;
+    console.log(cardNumber, dateOfExpiry, cvv);
+    if (cardNumber && dateOfExpiry && cvv) {
+      setTimeout(function () {
+        alert("payment succesfull");
+      }, 2000);
+     
+    }
+    setTimeout(function(){
+      window.location.href = "success.html";
+    },4000)
+  }
+</script>
+<script type="module">
+import footer from './components/footer.js';
+document.getElementById("footer").innerHTML=footer()
+
+import navbar from './components/navbar.js';
+document.getElementById("navbar").innerHTML=navbar()
+
+</script>

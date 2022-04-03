@@ -1,0 +1,165 @@
+#signcontainer {
+  /* border: 1px solid blue !important; */
+  /* height: 500px; */
+  background-color: peru;
+  width: 70%;
+  margin: auto;
+  flex-direction: column;
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition-property: all;
+  transition-duration: 2s;
+  transition-delay: 1s;
+  border-radius: 10px;
+}
+#signcontainer:hover {
+  background-color: powderblue;
+  border-radius: 4px;
+  width:100%
+}
+#signcontainer>input{
+width:97%;
+}
+#buttonsign,
+#buttonlogin {
+  transition-property: all;
+  transition-duration: 3s;
+  /* transition-delay: 1s; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 100%;
+  padding: 2%;
+
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: larger;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* background-color: - */
+}
+#buttonsign,
+#buttonlogin:hover {
+  background-color: aqua;
+}
+
+#head {
+  font-family: "Courier New", Courier, monospace;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px 0px;
+  background-color: brown;
+  padding: 5px;
+  /* background-color:black */
+}
+#custo {
+  font-family: "Courier New", Courier, monospace;
+  padding: 5px;
+  font-size: larger;
+}
+#tick {
+  padding: 20px;
+  margin-top: 18px;
+}
+
+#FULLDIV {
+  margin: auto;
+  background-color: #fff;
+margin-top: 250px;
+  /* border: 5px solid black; */
+  text-align: center;
+  width: 50%;
+
+  transition-property: all;
+  transition-duration: 10s;
+  /* transition-delay: 1s; */
+
+  /* text-align: left; */
+}
+#FULLDIV:hover {
+  background-color: pink;
+  border-radius: 100px;
+}
+#Checkboxdiv {
+  /* border: 1px solid black; */
+  display: flex;
+  /* flex-wrap: */
+  /* text-align: center;
+    margin-left: 205px; */
+}
+
+#headingname {
+  /* background: -moz-linear-gradient(green); */
+  text-decoration: overline;
+  text-align: left;
+  border: 1px solid green;
+  margin-right: 80px;
+  font-family: "Times New Roman", Times, serif, 100px;
+  transition-property: all;
+  transition-duration: 2s;
+  transition-delay: 1s;
+  background-color: transparent;
+}
+#headingname {
+  color: #fff;
+  font-size: 20px;
+  background-color: brown;
+}
+.inputsize {
+  /* flex-wrap: wrap; */
+  padding: 5px;
+  /* color: blue; */
+  margin-top: 10px;
+  transition-property: all;
+  transition-duration: 2s;
+  /* transition-delay: 1s; */
+  border-radius: 10px;
+  /* width: 100%; */
+}
+.inputsize {
+  color: blue;
+  font-size: 20px;
+  background-color: blanchedalmond;
+}
+body {
+  /* background-color: black; */
+  /* background-image: "https://www.freepik.com/free-vector/mobile-app-concept_4185663.htm#query=sign%20up&position=38&from_view=keyword"; */
+  transition-property: all;
+  transition-duration: 5s;
+  border-radius: 5px;
+}
+body :hover {
+  /* background: -webkit-gradient(red, yellowgreen); */
+  border-radius: 5px;
+}
+#buttonlogin {
+  width: 300px;
+  background-color: bisque;
+}
+.inputsize {
+  width: 500px;
+  height: 30px;
+}
+a {
+  text-align: center;
+  color: teal;
+  font: inherit;
+  font-size: 14px;
+  /* font-size: 14px; */
+}
+#navbarcontainer {
+  margin-bottom: 20px;
+}
+#bigfoot {
+  border: 5px solid brown;
+}
+/* #logina {
+  color: green;
+  margin-left: 250px;
+}
+#signa {
+  color: green;
+} */
+
+/* <===============Footerccss============================> */
+
+/* <style> */
+
+/* <-------------------------navbar----------------------> */
+
+/* </style> */

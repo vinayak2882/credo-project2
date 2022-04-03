@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/data.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    
+
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div id="container">
+        <!-- <div id="main"></div> -->
+              
+        <div id="sort-filter">
+            <select id="filter" onchange="filterCat()">
+                <option value="">FILTER CATEGORY</option>
+                <option value="LIP CARE">LIP CARE</option>
+                <option value="EYE BROW LINER">EYE BROW LINER</option>
+                <option value="BODY OIL">BODY OIL</option>
+                <option value="HAIR STYLE">HAIR STYLE</option>
+                <option value="BODY CLEANERS">BODY CLEANERS</option>
+                <option value="MAKEUP CREAM">MAKEUP CREAM</option>
+                <option value="BODY LOTION">BODY LOTION</option>
+                <option value="BODY PERFUME">BODY PERFUM</option>
+                <option value="BROW BRUSH">BROW BRUSH</option>
+
+            </select>
+
+
+            <select id="sortPrice" onchange="sortPrice()">
+                <option value="">Sort by price</option>
+                <option value="low">Low to high</option>
+                <option value="high">High to low</option>
+            </select>
+        </div>
+        <!-- body section -->
+        <div id="container1">
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <div id="bigcontainer">
+        <!-- <----subscript--------------  -->
+        
+        <!-- upper -->
+      </div>
+   
+<footer id="footer"></footer>
+</body>
+
+</html>
+<script type="module" > //src="./scripts/nav.js"
+import footer from './components/footer.js';
+document.getElementById("footer").innerHTML=footer()
+
+import navbar from './components/navbar.js';
+document.getElementById("navbar").innerHTML=navbar()
+
+</script>
+
+<script src="./scripts/new.js"></script>

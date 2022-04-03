@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+  
+    <style></style>
+  </head>
+  <body>
+    <!-- <------------------------------navnarcontainer-->
+
+    <div id="navbarcont"></div>
+    <!-- <------------------------------signupcontainer---->
+    <div id="FULLDIV">
+      <!-- <div id = inide -->
+      <div id="head">
+        <h2 id="custo">CREATE ACCOUNT</h2>
+      </div>
+
+      <hr />
+      <div id="signcontainer">
+        <label id="headingname">FIRST NAME</label>
+        <br />
+        <input
+          type="text"
+          id="fname"
+          placeholder="First Name"
+          class="inputsize"
+        />
+        <br />
+        <br />
+
+        <label id="headingname">LAST NAME</label>
+        <br />
+        <input
+          type="text"
+          id="lname"
+          placeholder="Last Name"
+          class="inputsize"
+        />
+        <br />
+        <br />
+
+        <label id="headingname">BIRTHDAY</label>
+        <br />
+        <input
+          type="date"
+          id="birthinp"
+          placeholder="DATE OF BIRTH"
+          style="width: 95%"
+          class="inputsize"
+        />
+        <br />
+        <br />
+
+        <label id="headingname">EMAIL</label>
+        <br />
+        <input
+          type="email"
+          id="emailinp"
+          placeholder="Email"
+          class="inputsize"
+        />
+        <br />
+        <br />
+
+        <label id="headingname">PASSWORD</label>
+        <br />
+        <input
+          type="text"
+          id="password"
+          placeholder="Password"
+          class="inputsize"
+        />
+        <br />
+        <br />
+        <!-- <div id="Checkboxdiv">
+          <!-- <div id="Check"> -->
+          <!-- <input
+            id="checktick"
+            type="checkbox"
+            style="margin: 18px 5px 0px 2px; height: 15px; width: 20px"
+          /> -->
+          <!-- </div> -->
+          <!-- <div> -->
+
+          <!-- <p>SUBSCRIBE TO OUR NEWSLETTER</p> -->
+          <!-- </div> -->
+        </div> 
+        <br />
+        <button id="buttonsign">SIGN UP</button>
+        <br />
+        <p>RETURNING CUSTOMER?</p>
+        <a href="login.html" id="logina">LOGIN</a>
+      </div>
+    </div>
+
+    <!-- <----------footer----------->
+    <div id="bigerfoot"></div>
+  </body>
+</html>
+<script type="module">
+  // <-----------------------navbarcontainer-------->
+  import navbar from "./components/navbar.js";
+  console.log(navbar);
+   document.getElementById("navbarcont").innerHTML = navbar();
+  
+
+  // <------------foooter------------>
+  import footer from "./components/footer.js";
+  console.log(footer);
+  let bigfoot = document.getElementById("bigerfoot");
+  bigfoot.innerHTML = footer();
+  // <------------------catchbutton----------------->
+  document
+    .getElementById("buttonsign")
+    .addEventListener("click", signuupsubmit);
+
+  let BEAUTYARR = JSON.parse(localStorage.getItem("BEAUTYKEY")) || [];
+
+  // <-----------function work catch input------>
+  async function signuupsubmit() {
+    try {
+      // event.preventDefault();
+      console.log("rohit");
+      var Fname = document.getElementById("fname").value;
+      console.log(Fname);
+      var Lname = document.getElementById("lname").value;
+      console.log(Lname);
+      var Birthinp = document.getElementById("birthinp").value;
+      console.log(Birthinp);
+      var Emailinp = document.getElementById("emailinp").value;
+      console.log(Emailinp);
+      var Password = document.getElementById("password").value;
+      console.log(Password);
+      // var Checktick = document.getElementById("checktick").value;
+      // console.log(Checktick);
+
+      // console.log(Fname, Lname, Birthinp, Emailinp, Checktick);
+      // <-------------------GIVE CONDITION-------------------------------->
+      if (Fname == "") {
+        alert("Name must be fillled");
+        return false;
+      } else if (Lname == "") {
+        alert("Lname  must be fillled");
+        return false;
+      } else if (Birthinp == "") {
+        alert("email must be fillled");
+        return false;
+      } else if (Emailinp == "") {
+        alert("Emailinp  must be fillled");
+        return false;
+      } else if (Password == "") {
+        alert("Password  must be fillled");
+        return false;
+      
+      } else {
+        alert("Congratulation Sign up successful");
+        
+      }
+
+      var beautyobj = {
+        firstname: Fname,
+        lastname: Lname,
+        birthinp: Birthinp,
+        email: Emailinp,
+        password: Password,
+       
+      };
+      console.log("beautyobj",beautyobj);
+
+      // BEAUTYARR.push(beautyobj);
+      // console.log(BEAUTYARR);
+     beautyobj= JSON.stringify(beautyobj);
+     console.log(beautyobj)
+
+      let response = await fetch("http://localhost:5000/register",
+        {
+        method: "POST",
+
+        body: beautyobj,
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      let data = await response.json();
+      console.log("data:::",data);
+      alert(`congratulation  ${data.userRegister.firstname} Signup "successfull" "Hurray" `);
+      // function Timecontrol(name, role){
+      //     console.log(`Hello, my name is ${name}`);
+      //     console.log(`I'm a ${role}`);
+      //   }
+
+      setTimeout(function(){
+      window.location.href = "login.html";
+      }, 2000);
+
+    } catch (err) {
+      console.log(err);
+      // alert(err);
+    }
+  }
+</script>

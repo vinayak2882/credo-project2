@@ -1,0 +1,106 @@
+#container1 {
+    width: 70%;
+    margin: auto;
+  margin-top: 250px;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+
+/*Heading
+shopping cart */
+
+#head {
+    display: grid;
+    grid-template-columns: 90%;
+    background-color: #5a6981;
+    color: white;
+    padding: 0 10px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+#head>p {
+    /* border: 1px solid red; */
+    margin: 10px 0;
+    display: inline-block;
+    width: fit-content;
+}
+
+
+
+
+table {
+    color: black;
+    padding: 0 10px;
+    width: 81%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th {
+    /* border: 1px solid red; */
+    padding: 10px 30px;
+    background-color: #a9b8c0;
+    color: white;
+}
+
+tr,
+td {
+    text-align: center;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+}
+
+td:nth-child(1) {
+    width: 40px;
+}
+
+td:nth-child(2) {
+    color: #232524;
+    font-weight: bold;
+}
+
+td:nth-child(6) {
+    cursor: pointer;
+    background-color: rgb(161, 159, 159);
+}
+
+td:nth-child(6):hover {
+    background-color: crimson;
+    color: white;
+    font-size: 22px;
+    box-sizing: content-box;
+}
+
+
+/* CartItems Image styling here */
+
+td>img {
+    width: 50px;
+
+}
+
+#logo {
+    width: 100%;
+}
+
+#cart-bottom-btn {
+    /* border: 1px solid crimson; */
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+button {
+    background-color: #2eb990;
+    border: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
